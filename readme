@@ -1,0 +1,62 @@
+Ty Harness Chess Analysis Reporting Software version 2.
+
+
+Written and tested on raspberry pi 1b only.  Should compile on any
+Linux distro. but you'll need to tweak it for windows.  Mac??posix?? maybe.
+
+It's a rehash of v1 written years ago just a work in progress
+get it working on a raspberry pi.  I've took more out than
+Ive left in.
+
+V2  - dropped my old non standard file format and use
+pgn
+
+Added colour to the text.
+
+Please note the code at best is clunky use at own risk.
+
+Please improve it and enjoy your chess,
+
+Ty Harness
+
+
+Download all the files to one directory.  You may need to change
+file permissions not sure?  sudo chmod  see man chmod
+
+
+compiling with gcc:
+
+make
+
+
+mem leaks:
+valgrind --tool=memcheck --leak-check=full -v ./thChessV2
+
+
+
+To execute the software from CLI or terminal:
+
+./thChessV2                       --- Help and options menu displayed on screen
+
+or use the parameters
+
+./thChessV2 3                     --- where 3 is the number of template pages based on white's point of view.
+					you can add white as a 3rd parameter or black
+
+./thChessV2 2  white              --- where 2 is the number of template pages based on white's point of view.
+                         
+
+./thChessV2 4  black              --- where 4 is the number of template pages based on blacks's point of view.
+
+
+./thChessV2 <testfile>.pgn        --- to load in a saved game and export ps file automatically as <testfile>.ps
+
+./thChessV2 paul.pgn will export paul.ps in the same directory.
+
+to print a postscript file 
+
+lpr paul.ps    prints to default printer, see man lpr for options.
+
+
+
+
